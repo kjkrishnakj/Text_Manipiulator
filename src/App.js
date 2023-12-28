@@ -4,11 +4,11 @@ import Navbar from './components/Navbar';
 import { useState } from 'react';
 import About from './components/About';
 import React from "react";
-// import {
-//   BrowserRouter,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -26,21 +26,20 @@ function App() {
 
   return (
     <>
-
-      {/* <BrowserRouter> */}
-        <Navbar title="TextManipulator" mode={mode} toggleMode={toggleMode} />
-        {/* <div className="container my-3">
-          <Routes>
-            <Route path="/about" element={<About mode={mode} />} />
-          </Routes> */}
-        <TextForm heading="Enter your text" mode={mode} />
-          {/* <Routes>
-            <Route path="/" element={<TextForm heading="Enter your text" mode={mode} />}/>
-            
-          </Routes>
-        </div>
-      </BrowserRouter> */}
-
+    
+      <BrowserRouter>
+      <Navbar title="TextManipulator " mode={mode} toggleMode={toggleMode} />
+      <div className="container my-3">
+            <Routes>
+            <Route path="/about"element={<About />}/>
+            </Routes>
+            <Routes>
+            <Route path="/Text_Manipiulator"
+            element={<TextForm heading="Enter your text" mode={mode} />}/>
+            </Routes>
+      </div>
+          </BrowserRouter>
+      
     </>
   );
 }
